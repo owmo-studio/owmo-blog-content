@@ -64,7 +64,7 @@ Eventually the project matured and had a good balance between chances of emergen
 
 -   **Twist & Zoom** - the amount of camera-oriented twisting and zooming
 
-<ImageEmbed src="erratic-oob-B.jpg" alt="Erratic Out of Bounds" width={1024} height={682} />
+<ImageEmbed src="erratic-oob-B.jpg" alt="Erratic Out of Bounds" width={1200} height={800} />
 
 The vast majority of the coded logic also adhered to the rules of the purist, with only a few if/else statements checking a random value to introduce a little bit more variety to the mix. The rendering logic was otherwise one big math equation based on the pixel position within the canvas and random values fed into it. Conditional logic was also used to add render passes, where if a pixel were too bright or too dark it would scale the coordinate space randomly and re-render. I don’t consider this as necessarily a break in the purist rules, given it just helped fill in the canvas and introduced a lovely overlapping effect. Were I able to quantify it, I’d say the code roughly follows the same percentage of adherence to the imposed restrictions as the random variables.
 
