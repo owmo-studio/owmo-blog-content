@@ -1,0 +1,62 @@
+---
+title: "Photo Sampling in Photosynthetic"
+subtitle: "Layers of code-generated geometry sampled from original photographs to create dream-like worlds."
+date: "2021-06-28"
+tags: ["deep-dive"]
+---
+
+Before this project, my friends would likely say I had some creative interests but that my career was solidly in technology. Professionally I supported artists as a developer & technology manager. Privately I yearned to be one of them and studied the arts and tinkered with projects whenever I could find the time. While doing self-study programming Go (golang) for backend APIs I stumbled upon the fogleman/gg package, which offered an easy way to draw shapes on canvas. The creative spark struck and soon after I was instructing the computer to sample photographs I had taken over years past such that it could reconstruct the image via a controlled randomization of semi-transparent shapes.
+
+<ImageEmbed src="photosynthetic-collage.jpg" alt="Photosynthetic Collage" width={1572} height={1060} priority="true" />
+
+# Creating a Synthetic Photograph
+
+Generative artwork that use photographic samples is nothing new, but as a new artist exploring the space for the first time, it offered me a means of using skills I had already developed to produce something visually unique. I could leverage the existing composition, visual tone, contrast, saturation, etc. in my photographs to instruct the computer where and how I wanted to draw shapes. Below is an example (not from the collection) of each step in the process of creating this style of artwork.
+
+## 1 - Find a Source Image
+
+<ImageEmbed src="photosynthetic-1-source.jpg" alt="Photosynthetic Step 1" width={288} height={512} priority="true" />
+
+Why cry over spilled milk when it's got a beautiful shape, high contrast and subtle blue tint excellent for photo sampling?
+
+The source photos I used in this collection range wildly in quality. Many are beautiful shots of nature or posed photos I've taken of my girlfriend, while others are ugly "lifestyle" Instagram shots via cellphone
+
+What makes an excellent source image for generative scripts doesn't necessarily align with beautiful photography. I looked for images that had distinct shapes, relatively few primary colors and tonal mood. In the next section, you can see a few before and after images from the actual collection.
+
+## 2 - Resize to Output Resolution
+
+<ImageEmbed src="photosynthetic-2-resize.jpg" alt="Photosynthetic Step 2" width={384} height={384} />
+
+First step, simply resize the photo to match the 4000 x 4000 output resolution.
+
+## 3 - Fill the Canvas with Average Color
+
+<ImageEmbed src="photosynthetic-3-fill.jpg" alt="Photosynthetic Step 3" width={384} height={384} />
+
+Sample the photo and determine the light or dark background average.
+
+## 4 - Draw Large Round Shapes to Buffer
+
+<ImageEmbed src="photosynthetic-4-round.jpg" alt="Photosynthetic Step 4" width={512} height={512} />
+
+Focussing on higher luminance samples, this phase draws many low opacity, round shapes with minimal outlines. The goal of this pass is to create a soft foundation on which the next layer can be applied.
+
+## 5 - Draw Darker Details to Buffer
+
+<ImageEmbed src="photosynthetic-5-dark.jpg" alt="Photosynthetic Step 5" width={512} height={512} />
+
+Sampling lower luminance values and running fewer iterations, this layer draws squares and triangles with progressively increasing opacity and stroke weight to produce a layer that gives it definition.
+
+## 6 - Blend the Two Buffers Together
+
+<ImageEmbed src="photosynthetic-6-blend.jpg" alt="Photosynthetic Step 6" width={1024} height={1024} />
+
+Using a Hard Light blending method, apply the details on top of the round shapes to give the rough output composite artwork.
+
+## 7 - Manually Post Process the Final Artwork
+
+<ImageEmbed src="photosynthetic-7-post-process.jpg" alt="Photosynthetic Step 7" width={1024} height={1024} />
+
+Using an iPad, manually adjust the values, colors, and saturation to bring some artistic life to the final image and give it a name!
+
+Hundreds of photos and thousands of random generations went into this project. Only 50 images survived the culling process and while I'm obviously biased, I feel the collection resulted in a fairly equal distribution of quality artwork as a result.
