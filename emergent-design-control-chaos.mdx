@@ -7,7 +7,7 @@ tags: ["musings"]
 
 After creating a handful of generative art projects over the last year or so, I’ve found myself reflecting on intentionality and messaging in my projects and how it relates to my understanding generative art theory and techniques. Despite having had successes from a mix of my creativity, skill, and diligence alongside considerable luck in timing, I’m aware my understanding of the medium is akin to that of a novice when compared with those who have practiced and studied the medium for many years. Beyond doing readings and soaking up what other artists might be saying, I maintain an inquisitive mind by hypothesizing concepts and attempting to prove/disprove the statement I’ve come up with. Emergent design was my most recent exploration that I will now share.
 
-<ImageEmbed src="erratic-oob-A.jpg" alt="Erratic Out of Bounds" />
+<ImageEmbed src="erratic-oob-A.jpg" alt="Erratic Out of Bounds" width={1024} height={682} priority="true" />
 
 When looking through outputs from projects like **Memories of Qilin** by Emily Xie and **Ringers** by Dmitri Cherniak, there is an interesting commonality between the two projects, despite having completely different styles. They both produce art where the sum of the whole is more than the parts; emergent design. To pick a couple easy to recognize examples, as labeled by their communities, Memories has “[The Lion](https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/282/tokens/282000808)” and Ringers has “[The Goose](https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/13/tokens/13000879)”. While both of these examples depict an animal — easy to recognize form resembling something from real life — this is not a requirement of emergent design, it’s just an easy example to illustrate the idea that the elements in the work add up to a whole. What is it specifically that allowed these two projects to produce artworks with forms that the artist did not explicitly direct?
 
@@ -17,11 +17,17 @@ Studying each project’s output space for their common elements, and speculatin
 
 All generative artwork makes use of two core principles. First, a defined set of rules that when followed will result in a perceptible output. Second, using randomization sources to make decisions within this set of rules, thereby introducing a layer of abstraction between the creator and the execution. The types of randomization and where and how much they are applied to the rule set creates a spectrum ranging from control (minimal random) to chaos (fully random)
 
-<ImageEmbed src="proof-of-pep-1620.jpg" alt="Proof of Pepe #1620" size="inset" />
+<ImageEmbed src="proof-of-pep-1620.jpg" alt="Proof of Pepe #1620" size="inset" width={921} height={921} />
 
 Towards the **control** end of the spectrum, you’ll find projects that use randomization sparingly in favour of pre-defined elements to select from and construct the resulting output. I’ve heard this referred to as **stochastic** or **compositional** generative art, but categorization labels in this medium haven’t achieved a consensus quite yet. On this end of the spectrum you’ll find many of the collage projects, which pick from sets of images to be placed on the canvas. To the extreme end is where many PFP projects live — Moon Birds, Bored Apes, CryptoPunks — as they primarily use randomization for picking from elements created by artists. An interesting characteristic of this side of the spectrum is that given knowledge of the set elements, decision tree and shape of randomization, you can easily predict what the final artwork may look like.
 
-<ImageEmbed src="montreal-friend-scale-494.jpg" alt="Montreal Friend Scale #494" size="inset" />
+<ImageEmbed
+    src="montreal-friend-scale-494.jpg"
+    alt="Montreal Friend Scale #494"
+    size="inset"
+    width={1200}
+    height={1200}
+/>
 
 Moving over to the **chaos** end of the spectrum, you’ll find projects that make liberal use of randomization and have fewer pre-defined elements. Much of today’s on-chain generative art skews towards this end given that they have limitations on how much data they can afford to store, minimizing predetermined elements. It’s common to see colour palettes, musical notes, styles, flows, etc. as features to pick from because the data can be stored in relatively fewer bytes, but much of everything else is derived within the rule set. To the extreme end, you’ll find projects that use noise and math operations — [Raster](https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/341) is a great example — to create, inching closer to pure random, which would look not much different than a cable TV static signal.
 
@@ -40,7 +46,7 @@ Could this extreme set of rules lead to emergent design? What would it feel like
 
 The project began as a series of isolated shader experiments in which I was trying to manipulate SDF objects — mathematical way to draw spheres, boxes, etc. — with the goal of producing a deformed and sharply jagged structures. In one attempt, I tried slicing and transforming one side, which worked but ended up exponentially more expensive with every slice. I replaced the slice with a polar reflection instead and iteratively moved the centre pivot by an ever-decreasing amount in each step. What rendered was promising and as I refined the concept by adjusting the instructions and value ranges, I realized some versions of the script were producing unexpected results.
 
-<ImageEmbed src="erratic-experiments.jpg" alt="Erratic Experiments" />
+<ImageEmbed src="erratic-experiments.jpg" alt="Erratic Experiments" width={2666} height={1000} />
 
 My curiosity was piqued and the unexpected outputs spurred the reflection described previously in this article, leading to the hypothesis I would then choose to follow for the remainder of the project. After a little refactoring to adhere to the rules, I now had a working theory to explore and viable prototype to build upon. I set about reshaping the code little by little every day; adding new modifiers, adjusting values, rendering thousands of outputs overnight and identifying any outliers. This creative process went on for months in the early mornings and late evenings, alongside some paid client work I was working on at the time. I was obsessed with achieving my goal.
 
@@ -58,7 +64,7 @@ Eventually the project matured and had a good balance between chances of emergen
 
 -   **Twist & Zoom** - the amount of camera-oriented twisting and zooming
 
-<ImageEmbed src="erratic-oob-B.jpg" alt="Erratic Out of Bounds" />
+<ImageEmbed src="erratic-oob-B.jpg" alt="Erratic Out of Bounds" width={1024} height={682} />
 
 The vast majority of the coded logic also adhered to the rules of the purist, with only a few if/else statements checking a random value to introduce a little bit more variety to the mix. The rendering logic was otherwise one big math equation based on the pixel position within the canvas and random values fed into it. Conditional logic was also used to add render passes, where if a pixel were too bright or too dark it would scale the coordinate space randomly and re-render. I don’t consider this as necessarily a break in the purist rules, given it just helped fill in the canvas and introduced a lovely overlapping effect. Were I able to quantify it, I’d say the code roughly follows the same percentage of adherence to the imposed restrictions as the random variables.
 
