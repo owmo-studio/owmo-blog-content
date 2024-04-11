@@ -34,8 +34,41 @@ The [Lissajous curve](https://en.wikipedia.org/wiki/Lissajous_curve) technique w
 
 # Synthesizing Audio Reacting to Visuals
 
-Directly correlating the visuals with the synthesized audio was critical in emphasizing the sense of connection I wanted to express. While other projects have paired drones and melodic compositions with stylistically matching visuals with great success - such as Aaron Penne & Boreta’s R[ituals Venice](https://www.artblocks.io/collections/presents/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/172) - I felt having a direct link between them was important to expressing my creative intent.
+Directly correlating the visuals with the synthesized audio was critical in emphasizing the sense of connection I wanted to express. While other projects have paired drones and melodic compositions with stylistically matching visuals with great success - such as Aaron Penne & Boreta’s [Rituals Venice](https://www.artblocks.io/collections/presents/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/172) - I felt having a direct link between them was important to expressing my creative intent.
 
 <ImageEmbed src="flux-oob-D.jpg" alt="Flux Out of Bounds D" width={2048} height={1365} />
 
 In recent years, I've been making music as a hobby (nothing released yet) using analogue synthesizers, sequencers and controllers. I've enjoyed learning not just how to craft a unique timbre, but also how these generated signals relate to music theory. I yearned for a way to use this new knowledge in my art, then I discovered the [ToneJS](https://tonejs.github.io/) Library which provided similar methods for creating audio synthesis in the browser. While this would mean having to learn WebGL from scratch in order to render my shader - I had been using ThreeJS as my single library selection for Art Blocks - it was worth the effort to be able to craft uniquely shaped timbres for each artwork.
+
+<Grid cols={3} gap={8}>
+    <ImageEmbed
+        src="flux-unwrap-0.jpg"
+        alt="Flux Unwrap 0"
+        width={1024}
+        height={682}
+        cardTitle="Luminance Render"
+        cardContent="The first step in producing audio from the visuals was to render luminance to a fixed low resolution texture buffer that I could then read from to drive other values in the virtual synthesizer (like a CV connection)"
+    />
+    <ImageEmbed
+        src="flux-unwrap-1.jpg"
+        alt="Flux Unwrap 1"
+        width={1024}
+        height={682}
+        cardTitle="Bands for Chord Notes"
+        cardContent="Each edition selects a major chord that contains a low root note, a 3 note chord in the mid-range, and an extra 5th & 7th in higher octaves. These 6 notes then use sample data within pixel bands as shown."
+    />
+    <ImageEmbed
+        src="flux-unwrap-2.jpg"
+        alt="Flux Unwrap 2"
+        width={1024}
+        height={682}
+        cardTitle="Sample Chunked Averages"
+        cardContent="Each note band is then chunked into eight equally sized blocks and averaged to serve as the 'raw' sample data that are mapped to various elements of the synthesizer configuration. Normalized to 0-1 range."
+    />
+</Grid>
+
+# After Dinner Mints : Behind the Code
+
+In this episode I share a behind-the-scenes look at how Flux was made
+
+<VideoEmbed id="K05P2oqXZKE" />
