@@ -69,8 +69,37 @@ In recent years, I've been making music as a hobby (nothing released yet) using 
 
 Having made the raw data available, I began experimenting with different oscillators, filters and effects to create the drone timbre I was after. I couldn’t quite get what I wanted at first by simply mixing basic wave shapes (sine, square, triangle) but then I learned I could modify the [partials](<https://en.wikipedia.org/wiki/Harmonic_series_(music)>) that directly construct the waveform and thus craft a unique timbre for each note in the chord.
 
+<Grid cols={3} gap={8}>
+    <ImageEmbed
+        src="flux-unwrap-0.jpg"
+        alt="Flux Unwrap 0"
+        width={1024}
+        height={682}
+        cardTitle="Note Partials"
+        cardContent="Modifying the chunked data such that the lower octave notes were more prominent, the data was applied directly to each note's partials thus ensuring every frame would have a unique and ever-changing timbre."
+    />
+    <ImageEmbed
+        src="flux-unwrap-1.jpg"
+        alt="Flux Unwrap 1"
+        width={1024}
+        height={682}
+        cardTitle="Detune & Volume"
+        cardContent="Each note's band of data was averaged and mapped to detune (-30 to +30 cents) and have the volume adjusted. This resulted in a pleasant "widening" of the sound and low frequency vibrations due to note drifts."
+    />
+    <ImageEmbed
+        src="flux-unwrap-2.jpg"
+        alt="Flux Unwrap 2"
+        width={1024}
+        height={682}
+        cardTitle="Low / High Pass Filters"
+        cardContent="The entire image was averaged and the value used to control the cutoff frequency of a low and high pass filter, thus the dark renders were deep and smooth, with bright having a high pitch and quieter quality."
+    />
+</Grid>
+
+Of course, I couldn't possibly capture all of the fine details and exact configurations in the code for the audio and visual elements, but I hope that this overview gives you an idea of the complexity that went into making each edition in this project uniquely connected
+
 # After Dinner Mints : Behind the Code
 
-In this episode I share a behind-the-scenes look at how Flux was made
+If you'd like to know more, I share a lot of details that lead me to create Flux in this video:
 
 <YouTubeEmbed id="K05P2oqXZKE" />
