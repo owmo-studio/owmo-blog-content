@@ -1,0 +1,96 @@
+---
+title: "Rejecting Feature Meta with Erratic"
+date: "2022-10-18"
+tags: ["feature-details", "behind-the-code"]
+---
+
+Branching off an earlier build of Flux as a starting point, Erratic began to take shape through a series of experiments aimed at taking the once smooth, blended forms and tearing, distorting and otherwise iteratively fragmenting them beyond recognition. The early results produced some promising results at times when certain value ranges lined up, which convinced me to continue pursuing this creative direction. During development I was also working on some high profile client work that ended up being challenging due to time constraints and meant I did not have as much personal creative time as I had grown used to. During this time I felt stressed and frustrated that I did not have time for my own creative work. I am known to be stubborn at times, so rather than waiting for the client's project crunch time to pass, I instead crammed my personal work into my schedule wherever I could, which often meant late into the evening to the point of exhaustion. As I frantically worked on my art throughout an unpredictable and unhealthy schedule, what I was creating started to emerge as a reflection of the workflow I had thrust upon myself. It was a mix of calm and chaos full of ups & downs, and interestingly I could not predict the outputs. The name Erratic was the perfect fit as I embraced the inconsistency in the results.
+
+<Grid cols={2} gap={8}>
+    <ImageEmbed
+        src="erratic-oob-A.jpg"
+        alt="Erratic Out of Bounds A"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        priority="true"
+    />
+    <ImageEmbed
+        src="erratic-oob-B.jpg"
+        alt="Erratic Out of Bounds B"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        priority="true"
+    />
+</Grid>
+
+At some point during development, I realized that the more I allowed parameter ranges - variables that are passed to the shader I use to actually draw the artwork - to run wild and not have clear demarcation points other than their maximum and minimum, the more I would discover surprising compositions. Certain combinations of exact values across the ~50 randomized values I had constructed would somehow produce something beautiful that I had not intended. I decided to re-focus my efforts on achieving the emergent design as a possibility in the collection and rejected the use of branching conditionals. The challenge of that decision becomes one of balancing the possibility of unique results (expanding the domain) with collection cohesion (contracting the domain).
+
+# Featureless Qualities
+
+By not bracketing the input variable ranges and writing an algorithm where these values are iteratively intertwined, there truthfully wasn't a way to clearly set feature descriptions that would have any meaning once the output was generated. You will find common elements and structures in the images, suggesting it might have been possible, but in practice changes in just a few variables could produce radically different visuals, making it nigh impossible to describe meaningfully, so I embraced featureless qualities instead.
+
+-   **Color** - Three sets of random RGB values are picked within a clamped ranges - with the green channel being drastically reduced to allow more warm colours - and applied to the X, Y and Z facing ratios on a smooth 3D surface. This creates the smooth, subtle gradients in the fragmented pieces.
+-   **Iterations** - The rendering shader goes through several loops when fragmenting the structure, with each pass scaling the coordinate space being projected smaller and smaller, including pixel value checks that trigger re-rendering at vastly different scales, creating some visual layering.
+-   **Reflection** - Three polar reflections are applying the projected ray on each iteration, each with a small but consistent movement in the space. This largely produces the "tearing" and "fragmentation".
+-   **Movements** - Movements are applied to the overall composition, iterations, centers of polar reflections, etc. creating consistent offsets between all of the operations, ensuring each render is unique.
+
+Mentioned previously, the intertwined nature of the randomized variables made feature definitions impossible, but a few variables in isolation are able to produce some semblance of recognizable qualities.
+
+<Grid cols={2} gap={8}>
+    <ImageEmbed
+        src="erratic-features-0.jpg"
+        alt="Erratic Feature Twist"
+        width={465}
+        height={310}
+        mode="grid-item"
+        cardTitle="Twist"
+        cardContent="camera facing coordinate twisting creates a vortex effect"
+    />
+    <ImageEmbed
+        src="erratic-features-1.jpg"
+        alt="Erratic Feature Zoom"
+        width={465}
+        height={310}
+        mode="grid-item"
+        cardTitle="Zoom"
+        cardContent="adjusting the focal length narrows or widens view angle"
+    />
+    <ImageEmbed
+        src="erratic-features-2.jpg"
+        alt="Erratic Feature Iterations"
+        width={465}
+        height={310}
+        mode="grid-item"
+        cardTitle="Iterations"
+        cardContent="repeating the algorithm in increasingly smaller scales"
+    />
+    <ImageEmbed
+        src="erratic-features-3.jpg"
+        alt="Erratic Feature Noise"
+        width={465}
+        height={310}
+        mode="grid-item"
+        cardTitle="Noise"
+        cardContent="modifying the projected distance with perlin noise"
+    />
+    <ImageEmbed
+        src="erratic-features-4.jpg"
+        alt="Erratic Feature Warp"
+        width={465}
+        height={310}
+        mode="grid-item"
+        cardTitle="Warp"
+        cardContent="adding to the projected distances along the z axis"
+    />
+    <ImageEmbed
+        src="erratic-features-5.jpg"
+        alt="Erratic Feature Distort"
+        width={465}
+        height={310}
+        mode="grid-item"
+        cardTitle="Distort"
+        cardContent="adding to the projected distances along the x/y axis"
+    />
+</Grid>
