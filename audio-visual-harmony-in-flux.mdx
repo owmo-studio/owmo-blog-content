@@ -10,7 +10,7 @@ Conceptually this project began as a desire to creatively interpret quantum fiel
 
 There are many ways one can practice meditation; using audio as an aid is a popular method. Soothing music, rustling sounds of nature, chimes of singing bowls, or low octave chants are among many of the popular auditory aids. Elements common to all include a mix of constant tones, pleasing chords, overlapping octaves and subtle variations over time. I used these elements to shape the synthesized audio frequencies in the omnipresent drone as it reacts to the slowly shifting light and dark areas within the visual art.
 
-<Grid cols={2} gap={8}>
+<Grid cols={2} gap={6}>
     <ImageEmbed
         src="flux-oob-B.jpg"
         alt="Flux Out of Bounds B"
@@ -35,7 +35,7 @@ While my primary objective was to create an audio-visual experience someone can 
 
 Continuing my creative exploration of a technique I discovered while studying raymarching, used previously in my _Quarantine_ collection, I experimented with different shapes (sphere, cube, torus), boolean operations (union, subtract, intersection), and spatial transforms (twist, displacement, move). Using this “unwrap” technique. Ultimately, I discovered that a smooth union of two twisted tori of varying diameters and thicknesses would produce a temporally stable and pleasing render, while allowing for an infinite cyclical motion.
 
-<Grid cols={3} gap={8}>
+<Grid cols={3} gap={6}>
     <ImageEmbed src="flux-unwrap-0.jpg" alt="Flux Unwrap 0" width={512} height={341} mode="grid-item" />
     <ImageEmbed src="flux-unwrap-1.jpg" alt="Flux Unwrap 1" width={512} height={341} mode="grid-item" />
     <ImageEmbed src="flux-unwrap-2.jpg" alt="Flux Unwrap 2" width={512} height={341} mode="grid-item" />
@@ -54,7 +54,7 @@ Directly correlating the visuals with the synthesized audio was critical in emph
 
 In recent years, I've been making music as a hobby (nothing released yet) using analogue synthesizers, sequencers and controllers. I've enjoyed learning not just how to craft a unique timbre, but also how these generated signals relate to music theory. I yearned for a way to use this new knowledge in my art, then I discovered the [ToneJS](https://tonejs.github.io/) Library which provided similar methods for creating audio synthesis in the browser. While this would mean having to learn WebGL from scratch in order to render my shader - I had been using ThreeJS as my single library selection for Art Blocks - it was worth the effort to be able to craft uniquely shaped timbres for each artwork.
 
-<Grid cols={3} gap={8}>
+<Grid cols={3} gap={6}>
     <ImageEmbed
         src="flux-step-0.jpg"
         alt="Flux Step 0"
@@ -86,7 +86,7 @@ In recent years, I've been making music as a hobby (nothing released yet) using 
 
 Having made the raw data available, I began experimenting with different oscillators, filters and effects to create the drone timbre I was after. I couldn’t quite get what I wanted at first by simply mixing basic wave shapes (sine, square, triangle) but then I learned I could modify the [partials](<https://en.wikipedia.org/wiki/Harmonic_series_(music)>) that directly construct the waveform and thus craft a unique timbre for each note in the chord.
 
-<Grid cols={3} gap={8}>
+<Grid cols={3} gap={6}>
     <ImageEmbed
         src="flux-step-3.jpg"
         alt="Flux Step 3"
