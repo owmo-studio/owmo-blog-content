@@ -1,0 +1,65 @@
+---
+title: "Having Fun with WaveShapes"
+date: "2023-04-03"
+tags: ["feature-details"]
+---
+
+After tackling “serious” topics in my previous artworks, I felt a burning desire to create something purely for the joy of creating. I wanted to have some fun, learn new techniques and not worry about crafting narrative around the work. I played a lot of video games growing up, with the NES being my first console. Pixelated game sprites made of simple colours were all that was needed to build rich imaginative worlds. I wanted to capture the magic I felt exploring these games and allowed my nostalgia to drive.
+
+<ImageEmbed src="waveshapes-oob-E.jpg" alt="WaveShapes Out of Bounds E" width={960} height={720} priority="true" />
+
+Drawing inspiration from video games I’ve enjoyed, I was led to using a top-down isometric perspective, simple primitives and crushing colours into narrow bands to emulate the feeling of what limited hardware could produce. Pixelation was top of my list and while it initially fit my nostalgia driven craze, once I began to see my creation in higher fidelity I knew mixing the old styling influences with modern clarity was the right way to go. The only catch was that I wanted it to run in real-time (more on that below) and while technology has advanced far beyond the 8-bit era influencing me, it wasn’t enough. It dawned on me that the developers of yesteryear likely had grand visions as well but were limited by hardware. However, I'm confident the JS code compatible for a long while and that hardware speeds will improve rapidly, and so I made the live artwork pixelated by default with an option to bump up the quality once devices were capable of running it. It felt analgous to my journey of playing with pixels to creating them today.
+
+<Grid cols={2} gap={6}>
+    <ImageEmbed
+        src="waveshapes-oob-F.jpg"
+        alt="WaveShapes Out of Bounds F"
+        width={960}
+        height={720}
+        mode="grid-item"
+        priority="true"
+    />
+    <ImageEmbed
+        src="waveshapes-oob-G.jpg"
+        alt="WaveShapes Out of Bounds G"
+        width={960}
+        height={720}
+        mode="grid-item"
+        priority="true"
+    />
+</Grid>
+
+# Wait... It Moves!?
+
+One of the reasons I love working in digital artwork is because you aren’t limited to what can be drawn on a canvas; it can move and react. Animation was an original career pursuit of mine and I revel in bringing the study of motion into my creations. The beauty of crafting motion art with code is being able to describe animation principles - slow in / out, arcs, squash & stretch - easily with mathematics. Slowly evolving waves of motions brought a passive life to the work, but it needed a little bit more excitement.
+
+## Interactions
+
+-   **click** - allow microphone & activate audio
+-   **drag & drop** - add audio files to playlist
+-   **spacebar** - toggle playlist / microphone
+-   **left/right arrows** - next / previous track
+-   **double click** - toggle fullscreen
+
+## URL Configurations
+
+-   **quality=1** - adjust pixelation (0.25 to 4)
+-   **maxDb=6** - set max sample decible (>0)
+-   **minDb=120** - set min sample decibel (>30)
+-   **static=true** - render single frame (quality 4)
+-   **time=1** - advances time in seconds (1 to N)
+
+Drawing on my nostalgia once more, I recalled a period of time after I had built my first computer where I downloaded all manner of music visualization plugins for Winamp and would get lost in the synchronous trance accompanying my favorite music. Once again, it felt like magic to me back then, but today I knew better. I could analyze frequencies and use them to make my shapes dance!
+
+### Audio Reactivity - Limitation & Suggestion
+
+Running JS code in a web browser, security policies limit audio monitoring to microphones you permit when prompted. This means that your computer's system audio - where music from a Spotify application is running, for example - is not accessible natively. However, you can install **audio routing software** on your computer, which allows you to connect system audio to a **virtual microphone** that can be allowed in the browser for WaveShapes to monitor.
+
+-   [Blackhole (Mac)](https://existential.audio/blackhole/)
+-   [Loopback (Mac)](https://rogueamoeba.com/loopback/)
+-   [Voicemeter (Windows)](https://vb-audio.com/Voicemeeter/index.htm)
+-   [Jack (Mac / Windows / Linux)](https://jackaudio.org/downloads/)
+
+# Features
+
+Lately I have adopted the mentality of not crafting features around any kind of rarity that can be analyzed and therefore flipped for immediate profit. I want each edition to be judged on the merit of what it presents the viewer and valued as such. Any statistical skew is thus buried within hundreds of randomization calls scattered throughout the code and each has been tailored to be in service of the collection as a whole. Qualities including density, color palette, smoothness, period of motion, etc. are randomized on the fly while the shader code is instantiated. The only exception is the overall Structure, which I felt was helpful for filtering purposes.
