@@ -31,3 +31,11 @@ Continuing my creative exploration of a technique I discovered while studying ra
 </Grid>
 
 The [Lissajous curve](https://en.wikipedia.org/wiki/Lissajous_curve) technique was used to calculate the rotational values for the combined object resulting in the ever-flowing and cyclical animation. Smooth gradients were achieved by additive color mixing based on the normal tangents of the object, with specular highlights coming from a colored light position. After rendering, a second pass applies glow and adjusts the overall tone of the image. Diversity in visuals was increased by adding a temporal offset in the animation, varrying bubble-like displacements applied to the twisted tori producing repeating peaks and valleys, and finally warping the (x, y) camera view rendering coordinates.
+
+# Synthesizing Audio Reacting to Visuals
+
+Directly correlating the visuals with the synthesized audio was critical in emphasizing the sense of connection I wanted to express. While other projects have paired drones and melodic compositions with stylistically matching visuals with great success - such as Aaron Penne & Boreta’s R[ituals Venice](https://www.artblocks.io/collections/presents/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/172) - I felt having a direct link between them was important to expressing my creative intent.
+
+<ImageEmbed src="flux-oob-D.jpg" alt="Flux Out of Bounds D" width={2048} height={1365} />
+
+In recent years, I've been making music as a hobby (nothing released yet) using analogue synthesizers, sequencers and controllers. I've enjoyed learning not just how to craft a unique timbre, but also how these generated signals relate to music theory. I yearned for a way to use this new knowledge in my art, then I discovered the [ToneJS](https://tonejs.github.io/) Library which provided similar methods for creating audio synthesis in the browser. While this would mean having to learn WebGL from scratch in order to render my shader - I had been using ThreeJS as my single library selection for Art Blocks - it was worth the effort to be able to craft uniquely shaped timbres for each artwork.
