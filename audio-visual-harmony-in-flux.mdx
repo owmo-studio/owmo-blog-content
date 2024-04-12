@@ -1,0 +1,125 @@
+---
+title: "Audio Visual Harmony in Flux"
+date: "2022-04-15"
+tags: ["behind-the-code"]
+---
+
+Conceptually this project began as a desire to creatively interpret quantum field theory by showing it as a series of energy fields that interfere constructively / destructively under observation, yielding the colorful flows seen in the artwork. As the project progressed, an ethereal quality emerged that reminded me of experiences I have had while practicing meditation. While I am not spiritual I do feel an energetic connection to the world in these moments and was compelled to share what I experienced in this collection.
+
+<ImageEmbed src="flux-oob-A.jpg" alt="Flux Out of Bounds A" width={1024} height={682} priority="true" />
+
+There are many ways one can practice meditation; using audio as an aid is a popular method. Soothing music, rustling sounds of nature, chimes of singing bowls, or low octave chants are among many of the popular auditory aids. Elements common to all include a mix of constant tones, pleasing chords, overlapping octaves and subtle variations over time. I used these elements to shape the synthesized audio frequencies in the omnipresent drone as it reacts to the slowly shifting light and dark areas within the visual art.
+
+<Grid cols={2} gap={6}>
+    <ImageEmbed
+        src="flux-oob-B.jpg"
+        alt="Flux Out of Bounds B"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        priority="true"
+    />
+    <ImageEmbed
+        src="flux-oob-C.jpg"
+        alt="Flux Out of Bounds C"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        priority="true"
+    />
+</Grid>
+
+While my primary objective was to create an audio-visual experience someone can become lost in, I also wanted to ensure the first static frame would maintain this sense of motion and be suitable for a high quality print that could hang on the wall.
+
+# Unwrapping Twisted Tori
+
+Continuing my creative exploration of a technique I discovered while studying raymarching, used previously in my _Quarantine_ collection, I experimented with different shapes (sphere, cube, torus), boolean operations (union, subtract, intersection), and spatial transforms (twist, displacement, move). Using this “unwrap” technique. Ultimately, I discovered that a smooth union of two twisted tori of varying diameters and thicknesses would produce a temporally stable and pleasing render, while allowing for an infinite cyclical motion.
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed src="flux-unwrap-0.jpg" alt="Flux Unwrap 0" width={512} height={341} mode="grid-item" />
+    <ImageEmbed src="flux-unwrap-1.jpg" alt="Flux Unwrap 1" width={512} height={341} mode="grid-item" />
+    <ImageEmbed src="flux-unwrap-2.jpg" alt="Flux Unwrap 2" width={512} height={341} mode="grid-item" />
+    <ImageEmbed src="flux-unwrap-3.jpg" alt="Flux Unwrap 3" width={512} height={341} mode="grid-item" />
+    <ImageEmbed src="flux-unwrap-4.jpg" alt="Flux Unwrap 4" width={512} height={341} mode="grid-item" />
+    <ImageEmbed src="flux-unwrap-5.jpg" alt="Flux Unwrap 5" width={512} height={341} mode="grid-item" />
+</Grid>
+
+The [Lissajous curve](https://en.wikipedia.org/wiki/Lissajous_curve) technique was used to calculate the rotational values for the combined object resulting in the ever-flowing and cyclical animation. Smooth gradients were achieved by additive color mixing based on the normal tangents of the object, with specular highlights coming from a colored light position. After rendering, a second pass applies glow and adjusts the overall tone of the image. Diversity in visuals was increased by adding a temporal offset in the animation, varrying bubble-like displacements applied to the twisted tori producing repeating peaks and valleys, and finally warping the (x, y) camera view rendering coordinates.
+
+# Synthesizing Audio Reacting to Visuals
+
+Directly correlating the visuals with the synthesized audio was critical in emphasizing the sense of connection I wanted to express. While other projects have paired drones and melodic compositions with stylistically matching visuals with great success - such as Aaron Penne & Boreta’s [Rituals Venice](https://www.artblocks.io/collections/presents/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/172) - I felt having a direct link between them was important to expressing my creative intent.
+
+<ImageEmbed src="flux-oob-D.jpg" alt="Flux Out of Bounds D" width={2048} height={1365} />
+
+In recent years, I've been making music as a hobby (nothing released yet) using analogue synthesizers, sequencers and controllers. I've enjoyed learning not just how to craft a unique timbre, but also how these generated signals relate to music theory. I yearned for a way to use this new knowledge in my art, then I discovered the [ToneJS](https://tonejs.github.io/) Library which provided similar methods for creating audio synthesis in the browser. While this would mean having to learn WebGL from scratch in order to render my shader - I had been using ThreeJS as my single library selection for Art Blocks - it was worth the effort to be able to craft uniquely shaped timbres for each artwork.
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed
+        src="flux-step-0.jpg"
+        alt="Flux Step 0"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        cardTitle="Luminance Render"
+        cardContent="The first step in producing audio from the visuals was to render luminance to a fixed low resolution texture buffer that I could then read from to drive other values in the virtual synthesizer (like a CV connection)"
+    />
+    <ImageEmbed
+        src="flux-step-1.jpg"
+        alt="Flux Step 1"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        cardTitle="Bands for Chord Notes"
+        cardContent="Each edition selects a major chord that contains a low root note, a 3 note chord in the mid-range, and an extra 5th and 7th in higher octaves. These 6 notes then use sample data within pixel bands as shown."
+    />
+    <ImageEmbed
+        src="flux-step-2.jpg"
+        alt="Flux Step 2"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        cardTitle="Sample Chunked Averages"
+        cardContent="Each note band is then chunked into eight equally sized blocks and averaged to serve as the 'raw' sample data that are mapped to various elements of the synthesizer configuration. Normalized to 0-1 range."
+    />
+</Grid>
+
+Having made the raw data available, I began experimenting with different oscillators, filters and effects to create the drone timbre I was after. I couldn’t quite get what I wanted at first by simply mixing basic wave shapes (sine, square, triangle) but then I learned I could modify the [partials](<https://en.wikipedia.org/wiki/Harmonic_series_(music)>) that directly construct the waveform and thus craft a unique timbre for each note in the chord.
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed
+        src="flux-step-3.jpg"
+        alt="Flux Step 3"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        cardTitle="Note Partials"
+        cardContent="Modifying the chunked data such that the lower octave notes were more prominent, the data was applied directly to each note's partials thus ensuring every frame would have a unique and ever-changing timbre."
+    />
+    <ImageEmbed
+        src="flux-step-4.jpg"
+        alt="Flux Step 4"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        cardTitle="Detune and Volume"
+        cardContent="Each note's band of data was averaged and mapped to detune (-30 to +30 cents) and have the volume adjusted. This resulted in a pleasant 'widening' of the sound and low frequency vibrations due to note drifts."
+    />
+    <ImageEmbed
+        src="flux-step-5.jpg"
+        alt="Flux Step 5"
+        width={1024}
+        height={682}
+        mode="grid-item"
+        cardTitle="Low / High Pass Filters"
+        cardContent="The entire image was averaged and the value used to control the cutoff frequency of a low and high pass filter, thus the dark renders were deep and smooth, with bright having a high pitch and quieter quality."
+    />
+</Grid>
+
+Of course, I couldn't possibly capture all of the fine details and exact configurations in the code for the audio and visual elements, but I hope that this overview gives you an idea of the complexity that went into making each edition in this project uniquely connected
+
+# After Dinner Mints : Behind the Code
+
+If you'd like to know more, I share a lot of details that lead me to create Flux in this video:
+
+<YouTubeEmbed id="K05P2oqXZKE" />

@@ -1,0 +1,189 @@
+---
+title: "Having Fun with WaveShapes"
+date: "2023-04-03"
+tags: ["feature-details"]
+---
+
+After tackling “serious” topics in my previous artworks, I felt a burning desire to create something purely for the joy of creating. I wanted to have some fun, learn new techniques and not worry about crafting narrative around the work. I played a lot of video games growing up, with the NES being my first console. Pixelated game sprites made of simple colours were all that was needed to build rich imaginative worlds. I wanted to capture the magic I felt exploring these games and allowed my nostalgia to drive.
+
+<ImageEmbed src="waveshapes-oob-E.jpg" alt="WaveShapes Out of Bounds E" width={960} height={720} priority="true" />
+
+Drawing inspiration from video games I’ve enjoyed, I was led to using a top-down isometric perspective, simple primitives and crushing colours into narrow bands to emulate the feeling of what limited hardware could produce. Pixelation was top of my list and while it initially fit my nostalgia driven craze, once I began to see my creation in higher fidelity I knew mixing the old styling influences with modern clarity was the right way to go. The only catch was that I wanted it to run in real-time (more on that below) and while technology has advanced far beyond the 8-bit era influencing me, it wasn’t enough. It dawned on me that the developers of yesteryear likely had grand visions as well but were limited by hardware. However, I'm confident the JS code compatible for a long while and that hardware speeds will improve rapidly, and so I made the live artwork pixelated by default with an option to bump up the quality once devices were capable of running it. It felt analgous to my journey of playing with pixels to creating them today.
+
+<Grid cols={2} gap={6}>
+    <ImageEmbed
+        src="waveshapes-oob-F.jpg"
+        alt="WaveShapes Out of Bounds F"
+        width={960}
+        height={720}
+        mode="grid-item"
+        priority="true"
+    />
+    <ImageEmbed
+        src="waveshapes-oob-G.jpg"
+        alt="WaveShapes Out of Bounds G"
+        width={960}
+        height={720}
+        mode="grid-item"
+        priority="true"
+    />
+</Grid>
+
+# Wait... It Moves!?
+
+One of the reasons I love working in digital artwork is because you aren’t limited to what can be drawn on a canvas; it can move and react. Animation was an original career pursuit of mine and I revel in bringing the study of motion into my creations. The beauty of crafting motion art with code is being able to describe animation principles - slow in / out, arcs, squash & stretch - easily with mathematics. Slowly evolving waves of motions brought a passive life to the work, but it needed a little bit more excitement.
+
+### Interactions
+
+-   **click** - allow microphone & activate audio
+-   **drag & drop** - add audio files to playlist
+-   **spacebar** - toggle playlist / microphone
+-   **left/right arrows** - next / previous track
+-   **double click** - toggle fullscreen
+
+### URL Configurations
+
+-   **quality=1** - adjust pixelation (0.25 to 4)
+-   **maxDb=6** - set max sample decible (>0)
+-   **minDb=120** - set min sample decibel (>30)
+-   **static=true** - render single frame (quality 4)
+-   **time=1** - advances time in seconds (1 to N)
+
+Drawing on my nostalgia once more, I recalled a period of time after I had built my first computer where I downloaded all manner of music visualization plugins for Winamp and would get lost in the synchronous trance accompanying my favorite music. Once again, it felt like magic to me back then, but today I knew better. I could analyze frequencies and use them to make my shapes dance!
+
+### Audio Reactivity - Limitation & Suggestion
+
+Running JS code in a web browser, security policies limit audio monitoring to microphones you permit when prompted. This means that your computer's system audio - where music from a Spotify application is running, for example - is not accessible natively. However, you can install **audio routing software** on your computer, which allows you to connect system audio to a **virtual microphone** that can be allowed in the browser for WaveShapes to monitor.
+
+-   [Blackhole (Mac)](https://existential.audio/blackhole/)
+-   [Loopback (Mac)](https://rogueamoeba.com/loopback/)
+-   [Voicemeter (Windows)](https://vb-audio.com/Voicemeeter/index.htm)
+-   [Jack (Mac / Windows / Linux)](https://jackaudio.org/downloads/)
+
+# Features
+
+Lately I have adopted the mentality of not crafting features around any kind of rarity that can be analyzed and therefore flipped for immediate profit. I want each edition to be judged on the merit of what it presents the viewer and valued as such. Any statistical skew is thus buried within hundreds of randomization calls scattered throughout the code and each has been tailored to be in service of the collection as a whole. Qualities including density, color palette, smoothness, period of motion, etc. are randomized on the fly while the shader code is instantiated. The only exception is the overall Structure, which I felt was helpful for filtering purposes.
+
+### Lattice
+
+Tightly packed elements with relative uniformity
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed src="waveshapes-lattice-0.jpg" alt="WaveShapes Lattice 0" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-lattice-1.jpg" alt="WaveShapes Lattice 1" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-lattice-2.jpg" alt="WaveShapes Lattice 2" width={480} height={360} mode="grid-item" />
+</Grid>
+
+### Composite
+
+An interference pattern between two lattice structures
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed
+        src="waveshapes-composite-0.jpg"
+        alt="WaveShapes Composite 0"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+    <ImageEmbed
+        src="waveshapes-composite-1.jpg"
+        alt="WaveShapes Composite 1"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+    <ImageEmbed
+        src="waveshapes-composite-2.jpg"
+        alt="WaveShapes Composite 2"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+</Grid>
+
+### Cluster
+
+Fluctuating mathematical patterns across the elemental field
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed src="waveshapes-cluster-0.jpg" alt="WaveShapes Cluster 0" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-cluster-1.jpg" alt="WaveShapes Cluster 1" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-cluster-2.jpg" alt="WaveShapes Cluster 2" width={480} height={360} mode="grid-item" />
+</Grid>
+
+### Aligned
+
+Parallel lines of undulating waves of rotations and transformations
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed src="waveshapes-aligned-0.jpg" alt="WaveShapes Aligned 0" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-aligned-1.jpg" alt="WaveShapes Aligned 1" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-aligned-2.jpg" alt="WaveShapes Aligned 2" width={480} height={360} mode="grid-item" />
+</Grid>
+
+### Concentric
+
+Rings of circular structures pulse in and out over time
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed
+        src="waveshapes-concentric-0.jpg"
+        alt="WaveShapes Concentric 0"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+    <ImageEmbed
+        src="waveshapes-concentric-1.jpg"
+        alt="WaveShapes Concentric 1"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+    <ImageEmbed
+        src="waveshapes-concentric-2.jpg"
+        alt="WaveShapes Concentric 2"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+</Grid>
+
+### Perpendicular
+
+Parallel lines of undulating waves of rotations and transformations
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed
+        src="waveshapes-perpendicular-0.jpg"
+        alt="WaveShapes Perpendicular 0"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+    <ImageEmbed
+        src="waveshapes-perpendicular-1.jpg"
+        alt="WaveShapes Perpendicular 1"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+    <ImageEmbed
+        src="waveshapes-perpendicular-2.jpg"
+        alt="WaveShapes Perpendicular 2"
+        width={480}
+        height={360}
+        mode="grid-item"
+    />
+</Grid>
+
+### Regular
+
+Parallel lines of undulating waves of rotations and transformations
+
+<Grid cols={3} gap={6}>
+    <ImageEmbed src="waveshapes-regular-0.jpg" alt="WaveShapes Regular 0" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-regular-1.jpg" alt="WaveShapes Regular 1" width={480} height={360} mode="grid-item" />
+    <ImageEmbed src="waveshapes-regular-2.jpg" alt="WaveShapes Regular 2" width={480} height={360} mode="grid-item" />
+</Grid>
