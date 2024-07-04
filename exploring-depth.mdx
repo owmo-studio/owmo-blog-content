@@ -1,0 +1,98 @@
+---
+title: "Exploring Depth in my Work"
+date: "2024-07-05"
+tags: ["behind-the-code"]
+status: private
+---
+
+I've always felt an affinity for creative works that exhibit a sense of depth in them. My path to creating digital art started when I taught myself how to animated in 3D, in part because the extra dimension was intriguing. When I was at university studying interactive multimedia design, animation and visual effects was my focus and to support this my final year group project was producing a stereoscopic 3D animation.
+
+<ImageEmbed
+    src="exploring-depth-stereoscopy.jpg"
+    alt="University Final Year Project"
+    width={2538}
+    height={712}
+    priority="true"
+    cardTitle="Stereoscopic Frame from my student film"
+/>
+
+This was back before 3D at the cinema had even begun to be offered and getting a stereoscopic monitor and set of glasses was highly specialized and expensive. Our DIY solution was to align two projectors to play a side-by-side video spanning the displays, placing polarizing filters at 90 degree opposition to each other in front of each lens, and projecting onto a wall painted with a silver reflective quality to try and maintain the polarity as much as possible. I can't recall the exact method we used for the virtual camera - I think it may have been the toe-in method - but suffice to say the effect worked surprisingly well given our limited access to hardware.
+
+Now, about 15 years later, devices offering a similar experience are popping up, but without the need for glasses! My interest was piqued once again to explore different ways of introducing depth into my work, particularly because the idea of offering a shared experience without a complicated setup was now possible.
+
+One such device is the [Looking Glass Factory Portrait](https://lookingglassfactory.com/looking-glass-portrait) display, which offers a lenticular lens that spreads light from specific pixels to 48 separate angles such that each eye will see a different perspective in addition to being able to see it from side to side. The article linked below does an excellent job of walking one through how to produce content for the display if you'd like to learn more about it or stereoscopy in general.
+
+ARTICLE: [Adventures with the Looking Glass Portrait](https://paulbourke.net/stereographics/LookingGlass/) - by Paul Brooke
+
+# Replica
+
+In a very early phase of prototyping and conceptual exploration, Replica is meant to be a digital reflection of the process a painter may practice where they produce an original and also offer a print reproduction of the same work. How I plan to make homage this convention is beyond the scope of the article - as a hint, it draws from my experiences making copies of copies as a teen while working at a photocopy store - but what is pertinent is that I wanted repetition to be a strong element in the visuals to reinforce the motif. I landed on having layers of overlapping in a myriad of patterns or arrangements. Upon seeing the result it felt a bit flat and so I tried the idea of casting shadows on the layers beneath to give it some visual depth. I loved the result and wondered how I could enhance the effect even further.
+
+<ImageEmbed
+    src="exploring-depth-replica.jpg"
+    alt="Replica Example Artwork"
+    width={512}
+    height={683}
+    cardTitle="Replica - Example Render"
+/>
+
+That's when I purchased an LKG Portrait and worked to separate each layer into a set of it's own textures to be composited together. I faked the required view projections by just stretching and shifting the quad each layer is rendered on (kind of like doing a photo perspective adjustment in Photoshop) and set up an automated export that produces a Quilt image format the LKG expects (pictured below).
+
+<ImageEmbed
+    src="exploring-depth-twitter.jpg"
+    url="https://x.com/owmo_studio/status/1791200250172256365"
+    alt="X/Twitter Post about Replica LKG Frame"
+    width={1024}
+    height={1024}
+    cardTitle="X/Twitter Video of Replica on LKG Frame"
+    mode="inset"
+/>
+
+<ImageEmbed
+    src="exploring-depth-replica-quilt.jpg"
+    alt="Replica Example Quilt"
+    width={1024}
+    height={1024}
+    cardTitle="Replica - Example Quilt for LKG"
+/>
+
+The results were very satisfying and brought a sense of realism to the work in spite of the prototype just being flat coloured shapes. Originally I thought maybe I could offer this as the end medium for collectors, but it doesn't quite have the resolution I need for the smaller details and too expensive for the size of art it offers. However, it's great for visualizing depth and encouraged me to find other ways to bring art into the real world in a way that exhibits it's depth.
+
+# Entropy
+
+With more of a focus on producing fine art prints, Entropy is a chaotic system that is comprised of layers of logic where each preceding layer's pixel data is compared in a series of iterations to determine where and how to render. This layered approach was meant to help "fill in dark / light" gaps originally but ended up being an aesthetic that lends itself well to individually processed layers to create an overall aesthetic.
+
+<ImageEmbed src="exploring-depth-entropy.jpg" alt="Entroy Proof" width={1024} height={1365} mode="inset" />
+
+While I am completely satisfied with the results as a flat image intended for print, I wanted to use each of the layers - accessible as individual PNGs in my code - to see what kind of physical artworks I could produce with depth. I recalled a technique I saw from the recent Vancouver Art Fair where an artist used layers of epoxy resin as a canvas on which he painted small fish and aquatic life, giving it wonderful sense of depth. I couldn't find the artist mentioned, so here's a video showing a very similar work.
+
+<YouTubeEmbed id="QFGZJP6bNWE" />
+
+I've started to experiment with a similar technique where each layer is printed onto clear sheets and placed on the epoxy allowing the inks to bond, allowing for the sheet to be carefully removed later to complete the transfer. My hope is that if the aesthetics feel right I may be able to scale this up to larger sizes at a higher quality.
+
+<ImageEmbed
+    src="exploring-depth-epoxy.jpg"
+    width={1024}
+    height={1365}
+    cardTitle="Entropy - Epoxy Proof in progress"
+    mode="inset"
+/>
+
+# Collaboration with Mark Shoening
+
+I was contacted by Mark to see if I would be interested in collaborating on adapting a design concept he had been working on as a generative system. If you are not familiar with Mark's work, I suggest you browse his website and see his creations for yourself. One of the things he is known for is producing 3D printed geometric sculptures.
+
+[https://www.markschoening.com/](https://www.markschoening.com/)
+
+Many of his sculptural works use depth and overlapping structures, so conceptually I was immediately hooked. Now, I don't want to talk too much about what we're working on together just yet, but the collection had a strong design language that fit perfectly with where my creative mind had been in recent months. The sculptures are made of several layers of coloured lenses connected to each other and mounts that tie each layer together. The arrangement of each layer produces an emergent form while the light passing through coloured lens gets tinted and yields a uniquely beautiful caustics pattern.
+
+<ImageEmbed
+    src="exploring-depth-mark-shoening.jpg"
+    alt="Mark Shoening Example 3D Print"
+    width={1024}
+    height={1024}
+    cardTitle="Photograph of Example Sculpture"
+    mode="inset"
+/>
+
+The collaboration has presented enjoyable challenges thus far, such as learning how to effectively use a ThreeJS boolean library to build up the sculptures elements and export it as printable STL data. I'm looking forward to trying my hand at developing a raytracer dedicated to capturing the light transport just right so we can render transmission and caustics accurately. More importantly, we're both learning new ways of thinking and adapting our practices from each other and I have no doubt that the work we produce in the future will will benefit from this experience.
