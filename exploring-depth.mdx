@@ -1,0 +1,62 @@
+---
+title: "Exploring Depth in my Work"
+date: "2024-07-05"
+tags: ["behind-the-code"]
+status: draft
+---
+
+I've always felt an affinity for creative works that exhibit a sense of depth in them. My path to creating digital art started when I taught my self how to animated in 3D, in part because the extra dimension was intriguing to me. When I was in university studying interactive multimedia design, I made animation and visual effects my focus and for my final year group project, we chose to do a stereoscopic 3D animation.
+
+<ImageEmbed
+    src="exploring-depth-stereoscopy.jpg"
+    alt="University Final Year Project"
+    width={2538}
+    height={712}
+    priority="true"
+/>
+
+This was back before 3D at the cinema had even begun to be offered and getting a 3D capable monitor with glasses was a highly specialized and expensive. Our solution was to align two projectors to play a side-by-side video spanning the displays, placing polarizing filters at 90 degree opposition in front of each lens, and projected onto a wall painted with a silver reflective quality to try and maintain the polarity as much as possible. I can't recall the exact method we used for the virtual camera - I think it may have been a toe-in configuration - but suffice to say the effect worked surprisingly well for our DIY setup. The animation on the other hand was... well, student quality.
+
+Now, about 15 years later, devices offering a similar experience but without the need for glasses have been popping up. My interest has been piqued to once again explore different ways of introducing depth into my work, largely because the idea of offering work that can be a shared experience without a complicated setup is compelling.
+
+One such device is the Looking Glass Factory Portrait display, which offers a lenticular lens that spreads light from specific pixels to 45 separate angles such that each eye will see a different perspective in addition to being able to see it from side to side. The following article does an excellent job of walking one through how to produce content for the display if you'd like to learn more about the device and stereoscopy in general.
+
+[Adventures with the LookingGlass Portrait by Paul Brooke](https://paulbourke.net/stereographics/LookingGlass/)
+
+# Replica
+
+In a very early phase of prototyping and exploring the idea, Replica is meant to be a digital reflection of the process a painter might produce an original and also offer a print reproduction of the same work. How I plan to make this connection is beyond the scope of the article - it draws from my experiences making copies of copies as a teen while working at a photocopy store - but what is pertinent is that I wanted repetition to be a strong motif in the visuals. I landed on having layers of overlapping in a myriad of patterns or arrangements. Upon seeing the result it felt a bit flat and stale, and so the idea of casting shadows on the layers beneath was introduced to give it some subtle visual depth. I loved the result and wondered how I could push this further.
+
+**INSERT TWITTER IMAGE AND LINK HERE**
+
+That's when I purchased an LKG Portrait and worked to separate each layer into a set of it's own textures - diffuse and shadow - to be composited later. I faked a projection by just stretching and shifting the quad each layer is rendered on (kind of like doing a photo perspective adjustment in Photoshop) and set up an automated export that can product the Quilt format image the LKG expects.
+
+<ImageEmbed src="exploring-depth-replica.jpg" alt="Replica Example Artwork" width={512} height={683} mode="inset" />
+
+<ImageEmbed src="exploring-depth-replica-quilt.jpg" alt="Replica Example Quilt" width={1024} height={1024} />
+
+The results were very satisfying and brought a sense of realism to the work in spite of the prototype just being flat coloured shapes. Originally I thought maybe I could offer this as the end medium for collectors, but it doesn't quite have the resolution I need for the smaller details is a bit expensive for the size. However, it's great for a previews and is encouraging me to find other ways to bring art into the real world in a way that can maintain this sense of depth.
+
+# Entropy
+
+With a stronger focus on producing fine art prints, Entropy is a chaotic system that is comprised of layers of logic where each preceding layer's pixel data is compared in a series of iterations to determine where and how to render. This layered approach was meant to help "fill in dark / light" gaps originally but ended up being an aesthetic that lends itself well to individually processed layers to create an overall aesthetic. I couldn't find the exact artist, so here's a video showing a very similar work.
+
+<YouTubeEmbed id="QFGZJP6bNWE" />
+
+While I am completely satisfies with the results as a flat image intended for print, I felt the need to use each of the layers - accessible as individual PNGs in my code - to see what kind of physical artworks I could produce. I recalled a technique I saw from the recent Vancouver Art Fair where an artist used layers of epoxy resin as a canvas on which he painted small fish and aquatic life, giving it wonderful sense of depth.
+
+**INSERT IMAGE HERE**
+
+As you can see, I've started to experiment with a similar technique where each layer is printed onto clear sheets and placed on the epoxy allowing the inks to bond. allowing for the sheet to be carefully removed later to complete the transfer. My hope is that if the aesthetics feel right I may be able to scale this up to larger sizes at higher quality.
+
+# Collaboration with Mark Shoening
+
+I was contacted by Mark with a request to see if I would be interested in collaborating on adapting a design concept he had been working on as a generative system. If you are not familiar with Mark's work, I suggest you browse his website. One of the things he is known for is producing 3D printed geometric sculptures.
+
+[https://www.markschoening.com/](https://www.markschoening.com/)
+
+Many of his sculptural works use depth and overlapping structures, so conceptually I was already immediately hooked. Now, I don't want to talk too much about what we're working on together just yet, but the collection had a strong design language that fit perfectly with where my creative mind had been in recent months. The sculptures are made of several layers of coloured lenses connected to each other and mounts that tie each layer together. The arrangement of each layer produces an emergent form while the light passing through coloured lens yields a uniquely beautiful caustics pattern.
+
+**INSERT IMAGE HERE**
+
+The collaboration has presented enjoyable challenges thus far, such as learning how to effectively use a Three JS boolean library and export STL data. I'm looking forward to trying my hand at developing a raytracer dedicated to capturing the light transport just right so we can render caustics accurately. More importantly, we're both learning new ways of thinking and adapting our practices from each other and I have no doubt that the work we produce will benefit in the long run from this experience.
