@@ -13,21 +13,29 @@ I've always felt an affinity for creative works that exhibit a sense of depth in
     width={2538}
     height={712}
     priority="true"
+    cardTitle="Stereoscopic Frame from my student film"
 />
 
 This was back before 3D at the cinema had even begun to be offered and getting a 3D capable monitor with glasses was a highly specialized and expensive. Our solution was to align two projectors to play a side-by-side video spanning the displays, placing polarizing filters at 90 degree opposition in front of each lens, and projected onto a wall painted with a silver reflective quality to try and maintain the polarity as much as possible. I can't recall the exact method we used for the virtual camera - I think it may have been a toe-in configuration - but suffice to say the effect worked surprisingly well for our DIY setup. The animation on the other hand was... well, student quality.
 
 Now, about 15 years later, devices offering a similar experience but without the need for glasses have been popping up. My interest has been piqued to once again explore different ways of introducing depth into my work, largely because the idea of offering work that can be a shared experience without a complicated setup is compelling.
 
-One such device is the Looking Glass Factory Portrait display, which offers a lenticular lens that spreads light from specific pixels to 45 separate angles such that each eye will see a different perspective in addition to being able to see it from side to side. The following article does an excellent job of walking one through how to produce content for the display if you'd like to learn more about the device and stereoscopy in general.
-
 [Adventures with the LookingGlass Portrait by Paul Brooke](https://paulbourke.net/stereographics/LookingGlass/)
+
+One such device is the Looking Glass Factory Portrait display, which offers a lenticular lens that spreads light from specific pixels to 45 separate angles such that each eye will see a different perspective in addition to being able to see it from side to side. The article above does an excellent job of walking one through how to produce content for the display if you'd like to learn more about the device and stereoscopy in general.
 
 # Replica
 
 In a very early phase of prototyping and exploring the idea, Replica is meant to be a digital reflection of the process a painter might produce an original and also offer a print reproduction of the same work. How I plan to make this connection is beyond the scope of the article - it draws from my experiences making copies of copies as a teen while working at a photocopy store - but what is pertinent is that I wanted repetition to be a strong motif in the visuals. I landed on having layers of overlapping in a myriad of patterns or arrangements. Upon seeing the result it felt a bit flat and stale, and so the idea of casting shadows on the layers beneath was introduced to give it some subtle visual depth. I loved the result and wondered how I could push this further.
 
-**INSERT TWITTER IMAGE AND LINK HERE**
+[<ImageEmbed
+    src="exploring-depth-twitter.jpg"
+    alt="X/Twitter Post about Replica LKG Frame"
+    width={1024}
+    height={1024}
+    cardTitle="X/Twitter Video of Replica on LKG Frame"
+    mode="inset"
+/>](https://x.com/owmo_studio/status/1791200250172256365)
 
 That's when I purchased an LKG Portrait and worked to separate each layer into a set of it's own textures - diffuse and shadow - to be composited later. I faked a projection by just stretching and shifting the quad each layer is rendered on (kind of like doing a photo perspective adjustment in Photoshop) and set up an automated export that can product the Quilt format image the LKG expects.
 
@@ -74,8 +82,8 @@ Many of his sculptural works use depth and overlapping structures, so conceptual
     alt="Mark Shoening Example 3D Print"
     width={1024}
     height={1024}
-    mode="inset"
     cardTitle="Photograph of Example Sculpture"
+    mode="inset"
 />
 
 The collaboration has presented enjoyable challenges thus far, such as learning how to effectively use a Three JS boolean library and export STL data. I'm looking forward to trying my hand at developing a raytracer dedicated to capturing the light transport just right so we can render caustics accurately. More importantly, we're both learning new ways of thinking and adapting our practices from each other and I have no doubt that the work we produce will benefit in the long run from this experience.
