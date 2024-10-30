@@ -76,25 +76,25 @@ What makes an excellent source image for generative scripts doesn't necessarily 
 
 First step, simply resize the photo to match the 4000 x 4000 output resolution.
 
-<ImageEmbed src="photosynthetic-2-resize.jpg" alt="Photosynthetic Step 2" width={384} height={384} />
+<ImageEmbed src="photosynthetic-2-resize.jpg" alt="Photosynthetic Step 2" width={384} height={384} mode="inset" />
 
 ## 3 - Fill the Canvas with Average Color
 
 Sample the photo and determine the light or dark background average.
 
-<ImageEmbed src="photosynthetic-3-fill.jpg" alt="Photosynthetic Step 3" width={384} height={384} />
+<ImageEmbed src="photosynthetic-3-fill.jpg" alt="Photosynthetic Step 3" width={384} height={384} mode="inset" />
 
 ## 4 - Draw Large Round Shapes to Buffer
 
 Focussing on higher luminance samples, this phase draws many low opacity, round shapes with minimal outlines. The goal of this pass is to create a soft foundation on which the next layer can be applied.
 
-<ImageEmbed src="photosynthetic-4-round.jpg" alt="Photosynthetic Step 4" width={512} height={512} />
+<ImageEmbed src="photosynthetic-4-round.jpg" alt="Photosynthetic Step 4" width={512} height={512} mode="inset" />
 
 ## 5 - Draw Darker Details to Buffer
 
 Sampling lower luminance values and running fewer iterations, this layer draws squares and triangles with progressively increasing opacity and stroke weight to produce a layer that gives it definition.
 
-<ImageEmbed src="photosynthetic-5-dark.jpg" alt="Photosynthetic Step 5" width={512} height={512} />
+<ImageEmbed src="photosynthetic-5-dark.jpg" alt="Photosynthetic Step 5" width={512} height={512} mode="inset" />
 
 ## 6 - Blend the Two Buffers Together
 
